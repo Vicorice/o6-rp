@@ -1,0 +1,7 @@
+{
+    "pack": {
+        "pack_format": 88,
+        "description": "§e§oorig 6 resource pack",
+		"supported_formats": {"min_inclusive": 15, "max_inclusive": 999}
+    }
+}

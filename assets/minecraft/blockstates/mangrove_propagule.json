@@ -1,0 +1,9 @@
+{
+  "variants": {
+        "hanging=false":[
+           {"model":"block/reeds/reeds1"},
+           {"model":"block/reeds/reeds2"},
+           {"model":"block/reeds/reeds3"}
+        ]    
+  }   
+}

@@ -1,0 +1,33 @@
+{
+ "model": {
+  "type": "select",
+  "property": "custom_model_data",
+  "fallback": {
+   "type": "model",
+    "model": "item/heart_of_the_sea"
+  },
+  "cases": [
+   {
+    "when": "budtrap",
+    "model": {
+     "type": "model",
+     "model": "item/misc/budtrap"
+    }
+   },
+   {
+    "when": "budtrap_open",
+    "model": {
+     "type": "model",
+     "model": "item/misc/budtrap_open"
+    }
+   },
+   {
+    "when": "fluxwhirl",
+    "model": {
+     "type": "model",
+     "model": "item/misc/spiritgear"
+    }
+   }
+  ]
+ }
+} 

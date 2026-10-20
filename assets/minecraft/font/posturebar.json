@@ -1,0 +1,106 @@
+{
+    "providers": [
+        { "type":"space","advances":{".":-1 } },
+        { "type":"space","advances":{"!":-50 } },
+        { "type":"space","advances":{"_":2 } },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/empty.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "1"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/start1.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "2"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/start2.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "3"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/mid.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "4"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/end1.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "5"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/end2.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "6"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/end3.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "7"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/end4.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "8"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/emptypixel.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "a"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/emptynotched.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "b"
+                ]
+        },
+        {
+            "type": "bitmap",
+            "file": "font/posturebar/emptyend.png",
+            "ascent": 10,
+            "height": 10,
+            "chars": [
+                    "c"
+                ]
+        }
+    ]
+}

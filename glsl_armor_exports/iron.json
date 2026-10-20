@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "files": [
+    "assets/minecraft/shaders/include/cem_user/models/armor/iron.glsl",
+    "assets/minecraft/shaders/include/cem_user/detection/armor/iron.glsl",
+    "assets/minecraft/textures/entity/equipment/humanoid/iron_helmet.png",
+    "assets/minecraft/textures/entity/equipment/humanoid/iron.png",
+    "assets/minecraft/textures/entity/equipment/humanoid_leggings/iron_legs.png"
+  ],
+  "equipment": {
+    "assets/minecraft/equipment/iron.json": [
+      "humanoid",
+      "humanoid_leggings"
+    ],
+    "assets/minecraft/equipment/iron_helmet.json": [
+      "humanoid"
+    ]
+  }
+}
