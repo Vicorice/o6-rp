@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "particle":"minecraft:block/ignis/beating_ash",
+    "1":"minecraft:block/ignis/beating_ash",
+    "2":"minecraft:block/ignis/fleshsprouted_grass",
+    "3":"minecraft:block/ignis/fleshsprouted_grass_side"
+  },
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#1", "cullface": "down" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#2", "cullface": "up" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#3", "cullface": "north" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#3", "cullface": "south" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#3", "cullface": "west" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "3", "cullface": "east" }
+            }
+        }
+    ]
+}

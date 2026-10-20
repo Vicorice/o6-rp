@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "minecraft:block/ignis/fleshcyst",
+    "all_emissive": "minecraft:block/ignis/fleshcyst_emissive"
+  }
+}

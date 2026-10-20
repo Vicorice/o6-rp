@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "files": [
+    "assets/minecraft/shaders/include/cem_user/models/armor/silver.glsl",
+    "assets/minecraft/shaders/include/cem_user/detection/armor/silver.glsl",
+    "assets/minecraft/textures/entity/equipment/humanoid/silver_helmet.png",
+    "assets/minecraft/textures/entity/equipment/humanoid/silver.png",
+    "assets/minecraft/textures/entity/equipment/humanoid_leggings/silver_legs.png"
+  ],
+  "equipment": {
+    "assets/minecraft/equipment/silver.json": [
+      "humanoid",
+      "humanoid_leggings"
+    ],
+    "assets/minecraft/equipment/silver_helmet.json": [
+      "humanoid"
+    ]
+  }
+}

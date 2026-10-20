@@ -1,0 +1,47 @@
+{
+ "model": {
+  "type": "select",
+  "property": "custom_model_data",
+  "fallback": {
+   "type": "model",
+    "model": "item/nautilus_shell"
+  },
+  "cases": [
+   {
+    "when": "gem_alexandrite",
+    "model": {
+     "type": "model",
+     "model": "item/gems/alexandrite"
+    }
+   },
+   {
+    "when": "gem_jade",
+    "model": {
+     "type": "model",
+     "model": "item/gems/jade"
+    }
+   },
+   {
+    "when": "gem_onyx",
+    "model": {
+     "type": "model",
+     "model": "item/gems/onyx"
+    }
+   },
+   {
+    "when": "gem_amethyst",
+    "model": {
+     "type": "model",
+     "model": "item/gems/amethyst"
+    }
+   },
+   {
+    "when": "gem_opal",
+    "model": {
+     "type": "model",
+     "model": "item/gems/opal"
+    }
+   }
+  ]
+ }
+} 
