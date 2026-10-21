@@ -1,0 +1,26 @@
+{
+ "model": {
+  "type": "select",
+  "property": "custom_model_data",
+  "fallback": {
+   "type": "model",
+    "model": "item/leather_leggings"
+  },
+  "cases": [
+   {
+    "when": "iron",
+    "model": {
+     "type": "model",
+     "model": "item/equippables/iron_leggings"
+    }
+   },
+   {
+    "when": "silver",
+    "model": {
+     "type": "model",
+     "model": "item/equippables/silver_leggings"
+    }
+   }
+  ]
+ }
+} 
