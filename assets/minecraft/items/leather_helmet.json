@@ -20,6 +20,13 @@
      "type": "model",
      "model": "item/equippables/silver_helmet"
     }
+   },
+   {
+    "when": "gold",
+    "model": {
+     "type": "model",
+     "model": "item/equippables/gold_helmet"
+    }
    }
   ]
  }

@@ -1,0 +1,15 @@
+{
+    "providers": [
+        { "type":"space","advances":{"!":-18} },
+        { "type":"space","advances":{".":-2} },
+        {
+            "type": "bitmap",
+            "file": "font/gui/gearweld.png",
+            "ascent": 37,
+            "height": 256,
+            "chars": [
+                    "1"
+                ]
+        }
+    ]
+}

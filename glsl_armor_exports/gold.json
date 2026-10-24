@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "files": [
+    "assets/minecraft/shaders/include/cem_user/models/armor/gold.glsl",
+    "assets/minecraft/shaders/include/cem_user/detection/armor/gold.glsl",
+    "assets/minecraft/textures/entity/equipment/humanoid/gold_helmet.png",
+    "assets/minecraft/textures/entity/equipment/humanoid/gold.png",
+    "assets/minecraft/textures/entity/equipment/humanoid_leggings/gold_legs.png"
+  ],
+  "equipment": {
+    "assets/minecraft/equipment/gold.json": [
+      "humanoid",
+      "humanoid_leggings"
+    ],
+    "assets/minecraft/equipment/gold_helmet.json": [
+      "humanoid"
+    ]
+  }
+}
