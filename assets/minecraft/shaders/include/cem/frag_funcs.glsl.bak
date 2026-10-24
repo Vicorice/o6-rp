@@ -15,10 +15,14 @@ flat in int cem_reverse;
 // Macros must stay on one line: GLSL 330 (as compiled by the Vulkan backend) rejects '\' line continuations.
 #define ADD_SQUARE(p1, p2, p3, uv) { color = sSquare(-center, dirTBN, p1 * modelSize, p2 * modelSize, p3 * modelSize, vertexColor, color, minT, uv); }
 
-#define ADD_BOX(pos, size, dSide, uSide, nSide, eSide, sSide, wSide) { color = sBox(-center + (pos + modelOffset) * modelSize, dirTBN, size * modelSize, TBN, color, minT, uSide, dSide, nSide, wSide, sSide, eSide); }
+#define ADD_BOX(pos, size, dSide, uSide, nSide, eSide, sSide, wSide) { color = sBox(-center + (pos + modelOffset) * modelSize, dirTBN, size * modelSize, lightTBN, color, minT, uSide, dSide, nSide, wSide, sSide, eSide); }
 
 // Z is negated on center and dir to flip front/back so Blockbench's +Z north faces forward
-#define ADD_BOX_ROTATE(pos, size, Rotation, rotPivot, dSide, uSide, nSide, eSide, sSide, wSide) { vec3 _ro = vec3(-center.x, -center.y, center.z) + ((pos + modelOffset) + rotPivot) * modelSize; vec3 _rd = vec3(dirTBN.x, dirTBN.y, -dirTBN.z); color = sBox(Rotation * _ro - rotPivot * modelSize, Rotation * _rd, size * modelSize, TBN * inverse(Rotation), color, minT, uSide, dSide, nSide, wSide, sSide, eSide); }
+#define ADD_BOX_ROTATE(pos, size, Rotation, rotPivot, dSide, uSide, nSide, eSide, sSide, wSide) { vec3 _ro = vec3(-center.x, -center.y, center.z) + ((pos + modelOffset) + rotPivot) * modelSize; vec3 _rd = vec3(dirTBN.x, dirTBN.y, -dirTBN.z); color = sBox(Rotation * _ro - rotPivot * modelSize, Rotation * _rd, size * modelSize, lightTBN * inverse(Rotation), color, minT, uSide, dSide, nSide, wSide, sSide, eSide); }
+
+// Like ADD_BOX_ROTATE, but the box follows the hips/body instead of the leg carrying it: the view ray is rotated
+// about the hip joint (hipPivot, in the same divided units as pos) by hipsRot, which cancels the leg's swing.
+#define ADD_BOX_HIPS(pos, size, Rotation, rotPivot, hipPivot, dSide, uSide, nSide, eSide, sSide, wSide) { vec3 _pv = -(hipPivot + modelOffset) * modelSize; vec3 _cam = vec3(-center.x, -center.y, center.z); vec3 _ro = _pv + hipsRot * (_cam - _pv) + ((pos + modelOffset) + rotPivot) * modelSize; vec3 _rd = hipsRot * vec3(dirTBN.x, dirTBN.y, -dirTBN.z); color = sBox(Rotation * _ro - rotPivot * modelSize, Rotation * _rd, size * modelSize, hipsLightTBN * inverse(Rotation), color, minT, uSide, dSide, nSide, wSide, sSide, eSide); }
 
 #define ADD_QUAD(p1, p2, p3, p4, uv) { }
 
@@ -181,3 +185,4 @@ vec4 sBox(vec3 ro, vec3 rd, vec3 size, mat3 TBN, vec4 color, inout float T, vec4
 
     return color;
 }
+// glsl-armor-shaders v6

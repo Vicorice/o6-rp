@@ -65,3 +65,4 @@ void main() {
     color = color + cem_color;
     fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 }
+// glsl-armor-shaders v6

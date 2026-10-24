@@ -60,3 +60,4 @@ cem_lightMapColor = sample_lightmap(Sampler2, UV2);
 #else
 cem_lightMapColor = vec4(1);
 #endif
+// glsl-armor-shaders v6

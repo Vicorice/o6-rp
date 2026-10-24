@@ -185,4 +185,4 @@ vec4 sBox(vec3 ro, vec3 rd, vec3 size, mat3 TBN, vec4 color, inout float T, vec4
 
     return color;
 }
-// glsl-armor-shaders v6
+// glsl-armor-shaders v9

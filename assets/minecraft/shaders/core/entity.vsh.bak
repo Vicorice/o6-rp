@@ -128,3 +128,4 @@ void main() {
         #moj_import <cem/vert_setup.glsl>
     }
 }
+// glsl-armor-shaders v6

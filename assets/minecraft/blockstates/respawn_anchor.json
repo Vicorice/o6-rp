@@ -1,13 +1,13 @@
 {
   "variants": {
     "charges=0": {
-      "model": "minecraft:block/teamcoreobelisk"
+      "model": "minecraft:block/respawn_anchor_0"
     },
     "charges=1": {
-      "model": "minecraft:block/respawn_anchor_1"
+      "model": "minecraft:block/teamcore"
     },
     "charges=2": {
-      "model": "minecraft:block/respawn_anchor_2"
+      "model": "minecraft:block/teamcore_invisible"
     },
     "charges=3": {
       "model": "minecraft:block/respawn_anchor_3"

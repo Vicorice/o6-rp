@@ -2,6 +2,11 @@
 // glslang only declares gl_BaseVertexARB for GLSL >= 450.
 #extension GL_ARB_shader_draw_parameters : enable
 
+// Armor pipelines only (see entity.fsh): detection and model setup are compiled out everywhere else.
+#if defined(NO_OVERLAY) && defined(PER_FACE_LIGHTING)
+#define CEM_ENABLED
+#endif
+
 // Pipelines with NO_CARDINAL_LIGHTING (eyes, energy_swirl, ...) don't bind the Lighting block.
 #if defined(PER_FACE_LIGHTING) || !defined(NO_CARDINAL_LIGHTING)
 #define CEM_LIGHTING
@@ -120,12 +125,14 @@ void main() {
     texCoord0 = (TextureMat * vec4(UV0, 0.0, 1.0)).xy;
 #endif
 
+#ifdef CEM_ENABLED
     #moj_import <cem_user/detection.glsl>
 
     if (cem != 0) //Setup CEM model
     {
-        
+
         #moj_import <cem/vert_setup.glsl>
     }
+#endif
 }
-// glsl-armor-shaders v6
+// glsl-armor-shaders v9

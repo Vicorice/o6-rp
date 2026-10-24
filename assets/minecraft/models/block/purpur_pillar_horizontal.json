@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "minecraft:block/obsidine_plating",
+    "side": "minecraft:block/obsidine_plating"
+  }
+}

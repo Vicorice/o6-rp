@@ -105,4 +105,4 @@ float modelSize = length((gl_PrimitiveID % 2 == 1 ? Pos1 : Pos2) - Pos3);
 
 float minT = MAX_DEPTH;
 color = vec4(0);
-// glsl-armor-shaders v6
+// glsl-armor-shaders v9

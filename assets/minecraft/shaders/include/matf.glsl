@@ -75,4 +75,4 @@ mat4 RotateByAxis(vec3 axis, float angle)
                 oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,
                 0.0,                                0.0,                                0.0,                                1.0);
 }
-// glsl-armor-shaders v6
+// glsl-armor-shaders v9

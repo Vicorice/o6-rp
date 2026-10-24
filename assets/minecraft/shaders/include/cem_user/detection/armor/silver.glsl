@@ -1,4 +1,4 @@
-if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 8, 255))
+if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 17, 255))
 {
     int amt = 3 * 6;
     int faceNumber = cem_vertexId / 4 % amt;
@@ -7,17 +7,17 @@ if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 8, 255))
         case 15: {
             cem_reverse=1;
             modelOffset = vec3(0,-1.2856,0.2143);
-            cem=9;
+            cem=27;
             break;
         }
         case 3: {
             cem_reverse=1;
             modelOffset = vec3(-0.4286,-1.2856,0.2143);
-            cem=7;
+            cem=25;
             break;
         }
         case 9: {
-            cem=8;
+            cem=26;
             modelOffset = vec3(0.4286,-1.2856,0.2143);
             break;
         }
@@ -28,7 +28,7 @@ if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 8, 255))
     }
 }
 
-if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 9, 255))
+if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 18, 255))
 {
     int amt = 3 * 6;
     int faceNumber = cem_vertexId / 4 % amt;
@@ -36,13 +36,13 @@ if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 9, 255))
     switch (faceNumber)
     {
         case 9: {
-            cem=11;
+            cem=29;
             cem_reverse=1;
             modelOffset = vec3(-0.149,-0.47,0.188);
             break;
         }
         case 3: {
-            cem=12;
+            cem=30;
             flipY=1;
             modelOffset = vec3(0.149,-0.47,0.188);
             break;
@@ -54,14 +54,14 @@ if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 9, 255))
     }
 }
 
-if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 7, 255))
+if (round(texelFetch(Sampler0, ivec2(1, 0), 0) * 255) == vec4(0, 0, 16, 255))
 {
     int amt = 2 * 6;
     int faceNumber = cem_vertexId / 4 % amt;
     switch (faceNumber)
     {
         case 3: {
-            cem=10;
+            cem=28;
             cem_reverse=1;
             modelOffset = vec3(0,-2.93,0.5);
             break;
