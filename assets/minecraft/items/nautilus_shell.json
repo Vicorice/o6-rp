@@ -36,6 +36,13 @@
     }
    },
    {
+    "when": "gem_topaz",
+    "model": {
+     "type": "model",
+     "model": "item/gems/topaz"
+    }
+   },
+   {
     "when": "gem_opal",
     "model": {
      "type": "model",
