@@ -36,7 +36,7 @@
     }
    },
    {
-    "when": "gem_topaz",
+    "when": "gem_sapphire",
     "model": {
      "type": "model",
      "model": "item/gems/topaz"
