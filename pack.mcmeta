@@ -1,7 +1,21 @@
 {
-    "pack": {
-        "pack_format": 88,
-        "description": "§e§oorig 6 resource pack",
-		"supported_formats": {"min_inclusive": 15, "max_inclusive": 999}
-    }
+  "pack": {
+    "pack_format": 88,
+    "description": "§e§oorig 6 resource pack",
+    "supported_formats": {
+      "min_inclusive": 15,
+      "max_inclusive": 999
+    },
+    "min_format": 88,
+    "max_format": 97
+  },
+  "overlays": {
+    "entries": [
+      {
+        "min_format": 97,
+        "max_format": 2147483647,
+        "directory": "glsl_armor_26_3"
+      }
+    ]
+  }
 }
