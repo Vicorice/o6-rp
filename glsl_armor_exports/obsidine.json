@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "files": [
+    "assets/minecraft/shaders/include/cem_user/models/armor/obsidine.glsl",
+    "assets/minecraft/shaders/include/cem_user/detection/armor/obsidine.glsl",
+    "assets/minecraft/textures/entity/equipment/humanoid/obsidine_helmet.png",
+    "assets/minecraft/textures/entity/equipment/humanoid/obsidine.png",
+    "assets/minecraft/textures/entity/equipment/humanoid_leggings/obsidine_legs.png"
+  ],
+  "equipment": {
+    "assets/minecraft/equipment/obsidine.json": [
+      "humanoid",
+      "humanoid_leggings"
+    ],
+    "assets/minecraft/equipment/obsidine_helmet.json": [
+      "humanoid"
+    ]
+  }
+}
