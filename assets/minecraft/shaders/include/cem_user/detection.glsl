@@ -5,9 +5,11 @@
 #include <cem_user/detection/armor/silver.glsl>
 #include <cem_user/detection/armor/iron.glsl>
 #include <cem_user/detection/armor/obsidine.glsl>
+#include <cem_user/detection/armor/stormwood.glsl>
 #else
 #moj_import <cem_user/detection/armor/gold.glsl>
 #moj_import <cem_user/detection/armor/silver.glsl>
 #moj_import <cem_user/detection/armor/iron.glsl>
 #moj_import <cem_user/detection/armor/obsidine.glsl>
+#moj_import <cem_user/detection/armor/stormwood.glsl>
 #endif

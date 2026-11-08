@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "files": [
+    "assets/minecraft/shaders/include/cem_user/models/armor/stormwood.glsl",
+    "assets/minecraft/shaders/include/cem_user/detection/armor/stormwood.glsl",
+    "assets/minecraft/textures/entity/equipment/humanoid/stormwood_helmet.png",
+    "assets/minecraft/textures/entity/equipment/humanoid/stormwood.png",
+    "assets/minecraft/textures/entity/equipment/humanoid_leggings/stormwood_legs.png"
+  ],
+  "equipment": {
+    "assets/minecraft/equipment/stormwood.json": [
+      "humanoid",
+      "humanoid_leggings"
+    ],
+    "assets/minecraft/equipment/stormwood_helmet.json": [
+      "humanoid"
+    ]
+  }
+}

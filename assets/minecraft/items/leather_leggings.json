@@ -15,6 +15,13 @@
     }
    },
    {
+    "when": "stormwood",
+    "model": {
+     "type": "model",
+     "model": "item/equippables/stormwood_leggings"
+    }
+   },
+   {
     "when": "silver",
     "model": {
      "type": "model",
