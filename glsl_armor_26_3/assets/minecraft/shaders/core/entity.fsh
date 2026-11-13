@@ -73,6 +73,7 @@ layout(location = 15) in vec3 modelOffset;
 layout(location = 16) flat in int cem;
 layout(location = 17) flat in int cem_reverse;
 layout(location = 18) flat in vec4 cem_color;
+layout(location = 19) flat in vec4 cem_bound;
 #endif
 
 #ifndef OIT_ALPHA_ONLY
@@ -156,12 +157,14 @@ void main() {
         #include <cem/frag_main_setup.glsl>
 
         // Every exported box is traced by this one loop; the model files only supply data, as `case` lines of
-        // the switch below (case = cem * 256 + box index), each filling the box's rows:
+        // the switch below: an outer case per cem holding a switch on the box index j, each case filling the box's rows:
         //   r0: position.xyz          r1: half size.xyz, w = 1 if bound to the hips
         //   r2: rotation angles (rad)  r3: rotation pivot.xyz     r4: hip joint.xyz
         //   r5-r10: UV rects (x, y, w, h) of the down, up, north, east, south, west faces
         // Inlining one ray tracer per box, or reading the boxes from a big constant array, both made AMD's GL
-        // compiler take tens of seconds; this form compiles in well under a second.
+        // compiler take tens of seconds; this form compiles in well under a second. The lookup runs per box per
+        // pixel and its cost grows with the number of cases searched, so it is nested by cem: one flat switch over
+        // every box in the pack (cem * 256 + j) made close-up armor 8x slower to draw.
         // min(cem, 0) is 0 here but not a compile-time constant, so drivers keep this a loop instead of unrolling it.
         vec3 camM = vec3(-center.x, -center.y, center.z);
         vec3 rayM = vec3(dirTBN.x, dirTBN.y, -dirTBN.z);
@@ -170,17 +173,37 @@ void main() {
         {
             vec4 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10;
             bool found = true;
-            switch (cem * 256 + j)
+            switch (cem)
             {
                 #include <cem_user/models.glsl>
                 default: found = false; break;
             }
             if (!found)
                 break;
-            mat3 Rotation = Rotate3(r2.x, 0) * Rotate3(r2.y, 1) * Rotate3(r2.z, 2);
+
+            // Cheap reject before any per-box setup: a sphere that holds the box in every pose (around its pivot if
+            // rotated, around the hip joint if hips-bound; same frame as cem_bound). Most boxes miss most pixels,
+            // and a box whose sphere starts behind the nearest hit so far can't be seen either.
+            bool hips = r1.w > 0.5;
+            bool rotated = r2.xyz != vec3(0.0);
+            vec3 sphereC = rotated ? r0.xyz + r3.xyz : r0.xyz;
+            float sphereR = rotated ? length(r3.xyz) + length(r1.xyz) : length(r1.xyz);
+            if (hips)
+            {
+                sphereR += length(sphereC - r4.xyz);
+                sphereC = r4.xyz;
+            }
+            vec3 toBox = camM + (sphereC + modelOffset) * modelSize;
+            sphereR *= modelSize * 1.02;
+            float sb = dot(toBox, rayM);
+            float sc = dot(toBox, toBox) - sphereR * sphereR;
+            if (sc > 0.0 && (sb > 0.0 || sb * sb < sc || -sb - sqrt(sb * sb - sc) >= minT))
+                continue;
+
+            // Most boxes aren't rotated: skip the six sin/cos per pixel for them.
+            mat3 Rotation = rotated ? Rotate3(r2.x, 0) * Rotate3(r2.y, 1) * Rotate3(r2.z, 2) : mat3(1.0);
 
             // Same maths as ADD_BOX_ROTATE / ADD_BOX_HIPS: hips boxes rotate the ray about the hip joint.
-            bool hips = r1.w > 0.5;
             mat3 boxRot = hips ? hipsRot : mat3(1.0);
             vec3 pivotM = -(r4.xyz + modelOffset) * modelSize;
             vec3 ro = pivotM + boxRot * (camM - pivotM) + ((r0.xyz + modelOffset) + r3.xyz) * modelSize;
@@ -212,4 +235,4 @@ void main() {
     fragColor = calculateFinalColor(color);
     #endif
 }
-// glsl-armor-shaders v10
+// glsl-armor-shaders v13

@@ -28,6 +28,48 @@ if (cem_reverse == 1)
 
 mat3 TBN = mat3(tangent, bitangent, normalT);
 
+vec2 UV1 = round(cem_uv1.xy / cem_uv1.z);
+vec2 UV2 = round(cem_uv2.xy / cem_uv2.z);
+
+vec2 stp = min(UV1, UV2);
+vec2 res = abs(UV1 - UV2);
+
+vec3 rawCenter = (Pos1 + Pos2) / 2;
+vec3 cem_rayOrigin = vec3(0);
+vec3 center = rawCenter * TBN;
+vec3 dir = normalize(cem_glPos);
+vec3 dirTBN = normalize(cem_glPos * TBN);
+
+if (ProjMat[3][0] == -1)
+{
+    // GUI (orthographic): parallel rays along -Z, starting on the near plane. 26.2 GUI renders use
+    // an ortho projection with near/far -1000/1000, i.e. the near plane is at view-space z = +1000.
+    cem_rayOrigin = vec3(cem_glPos.xy, 1000.0);
+    center = (rawCenter - cem_rayOrigin) * TBN;
+    dir = vec3(0, 0, -1);
+    dirTBN = normalize(dir * TBN);
+}
+
+float modelSize = length((gl_PrimitiveID % 2 == 1 ? Pos1 : Pos2) - Pos3);
+
+float minT = MAX_DEPTH;
+color = vec4(0);
+
+// A ray that misses the model's bounding sphere can't hit any of its boxes, so skip the box loop for that pixel.
+// cem_bound (from the exporter) is the sphere's centre and radius in model units, in the same frame as the box
+// positions; hips-bound boxes are inside it whatever the hips rotation.
+if (cem_bound.w >= 0.0)
+{
+    vec3 boundM = -(cem_bound.xyz + modelOffset) * modelSize;
+    vec3 toCam = vec3(-center.x, -center.y, center.z) - boundM;
+    vec3 rayB = vec3(dirTBN.x, dirTBN.y, -dirTBN.z);
+    float radius = cem_bound.w * modelSize * 1.02;
+    float b = dot(toCam, rayB);
+    float c = dot(toCam, toCam) - radius * radius;
+    if (c > 0.0 && (b > 0.0 || b * b < c))
+        discard;
+}
+
 // Lighting. sBox shades faces with vanilla's minecraft_mix_light, which needs each face normal in the space the
 // light directions are defined in: the space of the entity vertex Position, before ModelViewMat. A box face normal
 // comes out of the ray tracer as coordinates along (tangent, bitangent, -normal) (the model frame mirrors z, see
@@ -78,31 +120,4 @@ mat3 hipsLightTBN = lightTBN;
         hipsLightTBN = viewToPos * mat3(tangent, hipsCos * bitangent + hipsSin * normalT, hipsSin * bitangent - hipsCos * normalT);
     }
 }
-
-vec2 UV1 = round(cem_uv1.xy / cem_uv1.z);
-vec2 UV2 = round(cem_uv2.xy / cem_uv2.z);
-
-vec2 stp = min(UV1, UV2);
-vec2 res = abs(UV1 - UV2);
-
-vec3 rawCenter = (Pos1 + Pos2) / 2;
-vec3 cem_rayOrigin = vec3(0);
-vec3 center = rawCenter * TBN;
-vec3 dir = normalize(cem_glPos);
-vec3 dirTBN = normalize(cem_glPos * TBN);
-
-if (ProjMat[3][0] == -1)
-{
-    // GUI (orthographic): parallel rays along -Z, starting on the near plane. 26.2 GUI renders use
-    // an ortho projection with near/far -1000/1000, i.e. the near plane is at view-space z = +1000.
-    cem_rayOrigin = vec3(cem_glPos.xy, 1000.0);
-    center = (rawCenter - cem_rayOrigin) * TBN;
-    dir = vec3(0, 0, -1);
-    dirTBN = normalize(dir * TBN);
-}
-
-float modelSize = length((gl_PrimitiveID % 2 == 1 ? Pos1 : Pos2) - Pos3);
-
-float minT = MAX_DEPTH;
-color = vec4(0);
-// glsl-armor-shaders v10
+// glsl-armor-shaders v13

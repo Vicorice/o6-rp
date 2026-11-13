@@ -80,6 +80,7 @@ layout(location = 15) out vec3 modelOffset;
 layout(location = 16) flat out int cem;
 layout(location = 17) flat out int cem_reverse;
 layout(location = 18) flat out vec4 cem_color;
+layout(location = 19) flat out vec4 cem_bound;
 #endif
 
 void main() {
@@ -128,6 +129,7 @@ void main() {
     cem = 0;
     cem_reverse = 0;
     cem_color = vec4(0.0);
+    cem_bound = vec4(0.0, 0.0, 0.0, -1.0); // no bounds: older exports
 
     // Vertex-only state written by detection/vert_setup code.
     int flipY = 0;
@@ -170,4 +172,4 @@ void main() {
     }
 #endif
 }
-// glsl-armor-shaders v10
+// glsl-armor-shaders v13

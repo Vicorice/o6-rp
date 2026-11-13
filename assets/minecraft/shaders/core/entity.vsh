@@ -53,6 +53,7 @@ out vec3 modelOffset;
 flat out int cem;
 flat out int cem_reverse;
 flat out vec4 cem_color;
+flat out vec4 cem_bound;
 
 void main() {
     sphericalVertexDistance = 0.0;
@@ -72,6 +73,7 @@ void main() {
     cem = 0;
     cem_reverse = 0;
     cem_color = vec4(0.0);
+    cem_bound = vec4(0.0, 0.0, 0.0, -1.0); // no bounds: older exports
 
     // Vertex-only state written by detection/vert_setup code.
     int flipY = 0;
@@ -141,4 +143,4 @@ void main() {
     }
 #endif
 }
-// glsl-armor-shaders v10
+// glsl-armor-shaders v13
