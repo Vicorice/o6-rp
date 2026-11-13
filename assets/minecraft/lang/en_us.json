@@ -105,7 +105,7 @@
   "block.minecraft.warped_nylium": "Sprouted Skysoil",
   "block.minecraft.cactus_flower": "Skysprouts",
   "block.minecraft.yellow_poplar_leaves": "Stormlit Leaves",
-  "block.minecraft.orange_poplar_leaves": "Spiralmound Leaves",
+  "block.minecraft.orange_poplar_leaves": "Spiralmound Ash Leaves",
   "block.minecraft.acacia_sapling": "Stormlit Sapling",
   "block.minecraft.poplar_sapling": "Spiralmound Sapling",
     "item.minecraft.amethyst_shard":"Spriteshard",
@@ -113,5 +113,5 @@
     "item.minecraft.emerald": "Silver Ingot",
     "item.minecraft.netherite_ingot": "Obsidine Ingot",
     "item.minecraft.glowstone_dust": "Sprite Dust",
-  "block.minecraft.red_poplar_leaves": "Spinemound Leaves"
+  "block.minecraft.red_poplar_leaves": "Spiralmound Flesh Leaves"
 }
