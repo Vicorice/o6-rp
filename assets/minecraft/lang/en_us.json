@@ -112,5 +112,6 @@
     "item.minecraft.powder_snow_bucket":"Cloud in a Bucket",
     "item.minecraft.emerald": "Silver Ingot",
     "item.minecraft.netherite_ingot": "Obsidine Ingot",
-    "item.minecraft.glowstone_dust": "Sprite Dust"
+    "item.minecraft.glowstone_dust": "Sprite Dust",
+  "block.minecraft.red_poplar_leaves": "Spinemound Leaves"
 }
