@@ -1,0 +1,46 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "minecraft:item/iron_sword"
+    },
+    "cases": [
+      {
+        "when": "sword_iron",
+        "model": {
+          "type": "model",
+          "model": "item/tools/sword_iron"
+        }
+      },
+      {
+        "when": "dagger_iron",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_iron"
+        }
+      },
+      {
+        "when": "naginata_iron",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_iron"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_iron"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
