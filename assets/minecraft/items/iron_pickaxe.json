@@ -13,6 +13,41 @@
           "type": "model",
           "model": "item/tools/pickaxe_iron"
         }
+      },
+      {
+        "when": "silver",
+        "model": {
+          "type": "model",
+          "model": "item/tools/pickaxe_silver"
+        }
+      },
+      {
+        "when": "gold",
+        "model": {
+          "type": "model",
+          "model": "item/tools/pickaxe_gold"
+        }
+      },
+      {
+        "when": "obsidine",
+        "model": {
+          "type": "model",
+          "model": "item/tools/pickaxe_obsidine"
+        }
+      },
+      {
+        "when": "wood",
+        "model": {
+          "type": "model",
+          "model": "item/tools/pickaxe_wood"
+        }
+      },
+      {
+        "when": "stone",
+        "model": {
+          "type": "model",
+          "model": "item/tools/pickaxe_stone"
+        }
       }
     ]
   }

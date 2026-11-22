@@ -22,6 +22,62 @@
         }
       },
       {
+        "when": "sword_wood",
+        "model": {
+          "type": "model",
+          "model": "item/tools/sword_wood"
+        }
+      },
+      {
+        "when": "dagger_wood",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_wood"
+        }
+      },
+      {
+        "when": "sword_stone",
+        "model": {
+          "type": "model",
+          "model": "item/tools/sword_stone"
+        }
+      },
+      {
+        "when": "dagger_stone",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_stone"
+        }
+      },
+      {
+        "when": "sword_gold",
+        "model": {
+          "type": "model",
+          "model": "item/tools/sword_gold"
+        }
+      },
+      {
+        "when": "dagger_gold",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_gold"
+        }
+      },
+      {
+        "when": "dagger_silver",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_silver"
+        }
+      },
+      {
+        "when": "dagger_obsidine",
+        "model": {
+          "type": "model",
+          "model": "item/tools/dagger_obsidine"
+        }
+      },
+      {
         "when": "naginata_iron",
         "model": {
           "type": "select",
@@ -36,6 +92,146 @@
               "model": {
                 "type": "model",
                 "model": "item/tools/naginata_iron"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "naginata_wood",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_wood"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_wood"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "naginata_stone",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_stone"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_stone"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "naginata_silver",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_silver"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_silver"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "naginata_gold",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_gold"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_gold"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "naginata_obsidine",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/naginata_handheld_obsidine"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/naginata_obsidine"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "sword_obsidine",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/sword_handheld_obsidine"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/sword_obsidine"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "sword_silver",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/sword_handheld_silver"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/sword_silver"
               }
             }
           ]

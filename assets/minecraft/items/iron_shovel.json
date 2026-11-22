@@ -13,6 +13,41 @@
           "type": "model",
           "model": "item/tools/shovel_iron"
         }
+      },
+      {
+        "when": "silver",
+        "model": {
+          "type": "model",
+          "model": "item/tools/shovel_silver"
+        }
+      },
+      {
+        "when": "gold",
+        "model": {
+          "type": "model",
+          "model": "item/tools/shovel_gold"
+        }
+      },
+      {
+        "when": "obsidine",
+        "model": {
+          "type": "model",
+          "model": "item/tools/shovel_obsidine"
+        }
+      },
+      {
+        "when": "wood",
+        "model": {
+          "type": "model",
+          "model": "item/tools/shovel_wood"
+        }
+      },
+      {
+        "when": "stone",
+        "model": {
+          "type": "model",
+          "model": "item/tools/shovel_stone"
+        }
       }
     ]
   }

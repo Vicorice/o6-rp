@@ -13,6 +13,41 @@
           "type": "model",
           "model": "item/tools/hoe_iron"
         }
+      },
+      {
+        "when": "silver",
+        "model": {
+          "type": "model",
+          "model": "item/tools/hoe_silver"
+        }
+      },
+      {
+        "when": "gold",
+        "model": {
+          "type": "model",
+          "model": "item/tools/hoe_gold"
+        }
+      },
+      {
+        "when": "obsidine",
+        "model": {
+          "type": "model",
+          "model": "item/tools/hoe_obsidine"
+        }
+      },
+      {
+        "when": "wood",
+        "model": {
+          "type": "model",
+          "model": "item/tools/hoe_wood"
+        }
+      },
+      {
+        "when": "stone",
+        "model": {
+          "type": "model",
+          "model": "item/tools/hoe_stone"
+        }
       }
     ]
   }
