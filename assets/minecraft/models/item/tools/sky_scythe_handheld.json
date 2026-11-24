@@ -1,0 +1,34 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "item/tools/sky_scythe_handheld"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 4.5, 0.5],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 4.5, 0.5],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 30],
+			"translation": [1.13, 5.95, 2.63],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -30],
+			"translation": [1.13, 5.95, 2.63],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"head": {
+			"rotation": [-95, -90, 0],
+			"translation": [0, 2.25, -0.5]
+		}
+	}
+}

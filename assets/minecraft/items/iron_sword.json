@@ -236,6 +236,46 @@
             }
           ]
         }
+      },
+      {
+        "when": "sky_scythe",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/sky_scythe_handheld"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/sky_scythe"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "when": "core_crusher",
+        "model": {
+          "type": "select",
+          "property": "display_context",
+          "fallback": {
+            "type": "model",
+            "model": "item/tools/core_crusher_handheld"
+          },
+          "cases": [
+            {
+              "when": "gui",
+              "model": {
+                "type": "model",
+                "model": "item/tools/core_crusher"
+              }
+            }
+          ]
+        }
       }
     ]
   }
